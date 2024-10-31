@@ -1,0 +1,326 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "SUSE", sans-serif;
+    color: white;
+}
+/* boilerplate Styling */
+.mainContainer{
+    width: 100%;
+    height: 92vh;
+}
+
+/* Navbar Styling */
+.navContainer{
+    height: 60px;
+    width: 95%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2.5%;
+    margin-top: 5px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.navLogo{
+    font-size: 27px;
+    color: white;
+    font-family: "Dancing Script", cursive;
+}
+
+/* Sidebar Styling */
+.sidebarContainer{
+    height: 90.5vh;
+    width: 300px;
+    background-color: gray;
+    position: absolute;
+    left: -260px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    transition: 0.1s ease-in-out;
+}
+.menuContainer{
+    position: relative;
+    height: 40px;
+    width: 40px;
+    left: 300px;
+    background-color: gray;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menuContainer i{
+    font-size: 24px;
+    color: white;
+    display: none;
+}
+
+.show{
+    display: block !important;
+}
+
+.open{
+    left: 1% !important;
+}
+.contentContainer{
+    height: 90.5vh;
+    width: 75%;
+    background-color: gray;
+    position: absolute;
+    left: calc(20% + 60px);
+    transition: 0.1s ease-in-out;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.mainContainer .close{
+    left: 90px;
+    width: 93% !important;
+}
+
+.sidebarContent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.cities{
+    height: 100%;
+    width: 100%;
+}
+.citiesHeading{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+}
+.plusBtn{
+    font-size: 21px;
+    color: white;
+    cursor: pointer;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+.plusBtn i{
+    transition: 0.1s ease-in-out;
+}
+.plusBtn:hover{
+    background-color: black;
+}
+
+.plusBtn .click{
+    transition: 0.1s ease-in-out;
+    transform: rotateZ(-45deg);
+}
+
+.citiesDisplay{
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+}
+.citiesUl{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.citiesLi{
+    display: flex;
+    gap: 10px;
+    width: 165%;
+    margin-left: 20px;
+    font-size: 19px;
+}
+.citiesLi .content{
+    display: flex;
+    gap: 10px;
+    width: 80%;
+    font-size: 19px;
+}
+.citiesLi .deleteBtn{
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    padding: 2.5px 5px;
+    border-radius: 5px;
+    display: none;
+}
+.citiesLi .deleteBtn:hover{
+    background-color: black;
+}
+
+.citiesLi .check{
+    display: block;
+}
+.addInputBar{
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.cityLocation{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 45px;
+    padding: 2.5px;
+    justify-content: center;
+}
+.cityLocation input{
+    width: 70%;
+    height: 40px;
+    background-color: black;
+    font-size: 17px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    padding-left: 5px;
+}
+.cityLocation .tickContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+}
+.cityLocation .tickContainer i{
+    color: gray;
+}
+.cityLocation .tickContainer:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.inputSubmit{
+    width: 90%;
+    height: 45px;
+    background-color: black;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 5%;
+}
+
+.cities .expand{
+    display: flex;
+}
+
+.test{
+    display: none;
+}
+
+.horizontalLine{
+    height: 2px;
+    width: 95%;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    background-color: white;
+}
+.alertSlider{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 95%;
+    margin-top: 10px;
+}
+.alertHeading{
+    width: 100%;
+    font-size: 19px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+}
+.alertHeading > p{
+    width: 70%;
+    height: 100%;
+    font-size: 19px;
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+}
+.Tempdisplay{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+}
+
+.slider{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.slider form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.slider form .tempSlider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.tempSlider input{
+    width: 80%;
+    height: 30px;
+    background-color: white;
+    border-radius: 5px;
+}
+.inputSubmit{
+    margin-left: -5%;
+    width: 70%;
+}
+.tempSlider input{
+    appearance: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+}
+
+.tempSlider input::-webkit-slider-runnable-track{   
+    width: 100%;
+    height: 3px;
+    background: #d3d3d3;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    appearance: none;
+    color: red;
+}
+
+.tempSlider input::-webkit-slider-thumb{
+    width: 10px;
+    height: 10px;
+    background: black;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    position: relative;
+    top: -4px;
+}

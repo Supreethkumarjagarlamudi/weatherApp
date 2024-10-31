@@ -1,0 +1,70 @@
+<nav>
+
+    <%
+        let cities = []
+        for(let citi of details.cities) { 
+            cities.push(citi);
+        }
+    %>
+    <div class="sidebarContainer" id="sidebarContainer">
+        <div class="menuContainer" id="menuContainer">
+            <i class="fas fa-bars show" id="bars"></i>
+            <i class="fas fa-xmark" id="wrong"></i>
+        </div>
+        <div class="sidebarContent">
+            <div class="cities">
+                <div class="citiesHeading">
+                    <h2>Cities</h2>
+                    <div class="plusBtn" id="plusBtnCont">
+                        <i class="fas fa-plus" id="plusBtn"></i>
+                    </div>
+                </div>
+                <div class="citiesDisplay">
+                    <ul class="citiesUl" id="citiesUl">
+                        <% for(let city of cities) { %>
+                            <li class="citiesLi test">
+                                <div class="content">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <p><%= city %></p>
+                                </div>
+                                <div class="deleteBtn">
+                                    <i class="fas fa-trash-alt"></i>
+                                </div>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+                <div class="addInputBar" id="addInputBar">
+                    <div class="cityLocation">
+                        <input type="text" class="cityInput" id="cityInput" placeholder="Enter City to get weather">
+                        <div class="tickContainer" id="tickContainer">
+                            <i class="fa fa-check"></i>
+                        </div>
+                    </div>
+                    <form action="/updateCities" method="post">                   
+                        <input type="hidden" name="cityArray" id="hiddenInput" value="">
+                        <button class="inputSubmit" onclick="submitClick()">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="horizontalLine">
+            </div>
+            <div class="alertSlider">
+                <div class="alertHeading">
+                    <p>Alerts</p>
+                    <div class="Tempdisplay">
+                        <p id="tempIndicator"></p>°C
+                    </div>
+                </div>
+                <div class="slider">
+                    <form action="/updateTemp" method="post">
+                        <div class="tempSlider">
+                            <input type="range" id="slideInput" name="temp" min="15" max="55" step="1" value="<%= details.alertAt %>">
+                        </div>
+                        <button class="inputSubmit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
